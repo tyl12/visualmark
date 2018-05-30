@@ -18,26 +18,34 @@ if !has("signs")
 endif
 
 if &bg == "dark"
- highlight SignColor ctermfg=white ctermbg=blue guifg=Black guibg=SkyBlue
+ "highlight SignColor ctermfg=white ctermbg=blue guifg=white guibg=RoyalBlue3
+ highlight SignColor ctermfg=black ctermbg=yellow guifg=white guibg=RoyalBlue3
+ "highlight SignColor ctermfg=white ctermbg=green guifg=white guibg=RoyalBlue3
+ "highlight SignColor ctermfg=white ctermbg=blue guifg=white guibg=RoyalBlue3
 else
- highlight SignColor ctermbg=white ctermfg=blue guibg=grey guifg=RoyalBlue3
+ highlight SignColor ctermfg=black ctermbg=yellow guifg=white guibg=RoyalBlue3
+ "highlight SignColor ctermbg=white ctermfg=blue guibg=grey guifg=RoyalBlue3
 endif
 
 " ---------------------------------------------------------------------
 "  Public Interface:
 if !hasmapto('<Plug>Vm_toggle_sign')
-  map <unique> <c-F2> <Plug>Vm_toggle_sign
+  "map <unique> <c-F2> <Plug>Vm_toggle_sign
+  "map <unique> <F3> <Plug>Vm_toggle_sign
   map <silent> <unique> mm <Plug>Vm_toggle_sign 
 endif
 nnoremap <silent> <script> <Plug>Vm_toggle_sign	:call Vm_toggle_sign()<cr>
 
 if !hasmapto('<Plug>Vm_goto_next_sign')
-  map <unique> <F2> <Plug>Vm_goto_next_sign
+  "map <unique> <F2> <Plug>Vm_goto_next_sign
+  map <unique> <c-n> <Plug>Vm_goto_next_sign
 endif
 nnoremap <silent> <script> <Plug>Vm_goto_next_sign	:call Vm_goto_next_sign()<cr>
 
 if !hasmapto('<Plug>Vm_goto_prev_sign')
-  map <unique> <s-F2> <Plug>Vm_goto_prev_sign
+  "map <unique> <s-F2> <Plug>Vm_goto_prev_sign
+  "map <unique> <F2> <Plug>Vm_goto_prev_sign
+  map <unique> <c-p> <Plug>Vm_goto_prev_sign
 endif
 nnoremap <silent> <script> <Plug>Vm_goto_prev_sign	:call Vm_goto_prev_sign()<cr>
 
